@@ -14,7 +14,7 @@ void draw() {
 
   loadPixels();
 
-  float t = 1.0*frameCount/100.0;
+  float t = frameCount/200.0;
 
   for (int x=0; x<width; x++) {
     for (int y=0; y<height; y++) {
@@ -32,6 +32,9 @@ void draw() {
       case 3:
         c = function_03(x, y, t);
         break;
+      case 4:
+        c = function_04(x, y, t);
+        break;
       }
 
       pixels[y*width+x] = c;
@@ -46,17 +49,36 @@ void draw() {
 color function_00(int x, int y, float t) {
 
   //Ruido blanco
+  //No es continuo
   float noise = (int)random(0, 2)*255;
-  return color((int)noise);
+  //float noise = (int)random(0, 255);
+  return color(noise);
 }
-
 
 
 color function_01(int x, int y, float t) {
 
+  //Función matemática
+  //Es continuo
+  float noise = (sin(y/100)+1)*127;
+  //float noise = (sin(y/100.0)+1)*127;
+  //float noise = (sin(y/10.0)+1)*127;
+  //float noise = (sin(t+y/10.0)+1)*127;
+  //float noise = (sin(t+y/10.0) + sin(t*y/3.0) + 2) *64;
+  //float noise = (sin(t+y/10.0) + sin(cos(t)*x/3.0) + 2) *64;
+  //float f = sin(cos(t)*x/3.0) + 2;
+  //float noiser = (sin(t+y/10.0) + f) *64;
+  //float noiseg = (sin(t+y/5.0) + f) *64;
+  //float noiseb = (sin(t+y/3.0) + f) *64;
+  return color(noise);
+}
+
+
+
+color function_02(int x, int y, float t) {
+
   //Ruido de Perlin
   float noise = noise(x, y)*255;
-  //float noise = noise(x/150, y/150)*255;
   //float noise = noise(x/150.0, y/150.0)*255;
   //float noise = noise(x/150.0+t, y/150.0)*255;
   //float noise = noise(x/150.0, y/150.0, t)*255;
@@ -65,7 +87,7 @@ color function_01(int x, int y, float t) {
 
 
 
-color function_02(int x, int y, float t) {
+color function_03(int x, int y, float t) {
 
   int c;
 
@@ -126,7 +148,7 @@ color function_02(int x, int y, float t) {
   return color(c);
 }
 
-color function_03(int x, int y, float t) {
+color function_04(int x, int y, float t) {
 
   int r = 0, g = 0, b = 0;
 
@@ -187,6 +209,16 @@ color function_03(int x, int y, float t) {
   //r = (int)map(noise, 0.45, 0.60, 0, 255);
   //g = (int)map(noise, 0.55, 0.70, 0, 255);
   //b = (int)map(noise, 0.60, 0.80, 0, 255);
+  
+  //6
+  //Aumentar t, cambiar escala, cambiar límites map
+  //float noise = noise(x/150.0, y/150.0, t);
+  //r = (int)map(noise,0,1,0,255);
+  //noise = noise(x/150.0, y/150.0, t+0.01);
+  //g = (int)map(noise,0,1,0,255);
+  //noise = noise(x/150.0, y/150.0, t+0.02);  
+  //b = (int)map(noise,0,1,0,255);
+  
 
   return color(r, g, b);
 }
