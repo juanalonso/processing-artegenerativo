@@ -2,13 +2,13 @@ int scene = 0;
 
 int rows, cols;
 int cw, ch;
-int ncolors;
 
 color c;
 
 //Arcade palette by zacistan
 //http://www.color-hex.com/color-palette/40813
 color[] palette = {#f9f9f9, #002633, #5bc0de, #ee622c, #ee322c, #000000};
+int ncolors;
 
 void setup() {
 

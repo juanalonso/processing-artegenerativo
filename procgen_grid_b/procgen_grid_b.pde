@@ -1,4 +1,4 @@
-int scene = 0;
+int scene = 1;
 
 int rows, cols;
 int cw, ch;
@@ -6,7 +6,7 @@ int ncolors;
 
 color c;
 
-color[] palette = {#dcdcdc, #969696};
+color[] palette = {#C2C3C7, #FF004D};
 
 void setup() {
 
