@@ -96,6 +96,7 @@ void draw() {
       break;
     case 6:
       //Crecimiento (cambiar cellSize a 2)
+      //Destruir para construir
       if (/*cells[xr][yr]==0 &&*/ (countNeighbours(xr, yr)==1 /*|| countNeighbours(xr, yr)==2*/)) {
         cells[xr][yr]=c;
       } else {
