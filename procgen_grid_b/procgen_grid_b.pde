@@ -1,4 +1,4 @@
-int scene = 1;
+int scene = 0;
 
 int rows, cols;
 int cw, ch;
