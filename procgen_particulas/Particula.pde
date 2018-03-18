@@ -15,6 +15,9 @@ class Particula {
     //pos = new PVector(width*index*0.8+width*0.1, random(height));
     
     //@4  Número de partículas
+
+    //@4.1  Número de partículas
+    //acc = new PVector(0, 0.008);
     
     //@5 Número de partículas
     //pos = PVector.fromAngle(TWO_PI*index).setMag(150).add(width/2,200);
@@ -78,6 +81,11 @@ class Particula {
     //posición
     strokeWeight(2);
     stroke(0, 30);
+
+    //@4.1
+    //strokeWeight(15);
+    //stroke(0, 5);
+    
     
     //@7
     //stroke(0, 5);

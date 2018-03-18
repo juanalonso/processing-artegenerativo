@@ -18,6 +18,9 @@ void setup() {
   //@4
   //particulas = new Particula[5000];
 
+  //@4.1
+  //particulas = new Particula[500];
+
   //@5
   //particulas = new Particula[5000];
   
